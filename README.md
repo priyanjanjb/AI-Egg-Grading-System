@@ -45,23 +45,28 @@ The main goal of this research is to **develop an automated computer vision-base
 EggGradingFYP/
 │
 ├── train/
-│ ├── images/
-│ └── labels/
+│   ├── images/
+│   └── labels/
+│
 ├── valid/
-│ ├── images/
-│ └── labels/
+│   ├── images/
+│   └── labels/
+│
 ├── test/
-│ ├── images/
-│ └── labels/
+│   ├── images/
+│   └── labels/
+│
 ├── data.yaml
 ├── yolov8n.pt
+│
 └── result/
-└── egg/
-├── weights/
-│ ├── best.pt
-│ └── last.pt
-├── results.png
-└── confusion_matrix.png
+    └── egg/
+        ├── weights/
+        │   ├── best.pt
+        │   └── last.pt
+        │
+        ├── results.png
+        └── confusion_matrix.png
 
 yaml
 Copy code
