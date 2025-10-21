@@ -40,7 +40,6 @@ The main goal of this research is to **develop an automated computer vision-base
 
 ---
 
-yaml
 Copy code
 ---
 
