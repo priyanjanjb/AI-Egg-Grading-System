@@ -1,28 +1,29 @@
-# 🥚 Egg Grading System using YOLOv8
+# 🥚 AI-Egg-Grading-System using YOLOv8
 
-This project presents an intelligent **egg grading and quality detection system** developed using **Ultralytics YOLOv8**, a cutting-edge object detection framework.  
-The system automates the traditional egg grading process by detecting and classifying eggs based on their surface quality (such as *clean*, *cracked*, or *dirty*), enabling faster, more consistent, and reliable results in the poultry industry.
+This project introduces an intelligent **AI-powered Egg Grading and Quality Detection System** built using **Ultralytics YOLOv8**, a state-of-the-art object detection framework.  
+The system automates the traditional egg grading process by detecting and classifying eggs based on their surface quality (such as *Clean*, *Cracked*, or *Dirty*), ensuring **faster, consistent, and reliable** quality assessment for the poultry industry.
 
 ---
 
 ## 🎯 Project Objective
 
-Manual egg grading is often time-consuming and inconsistent due to human subjectivity.  
-The main goal of this research is to **develop an automated computer vision-based system** that:
-- Detects eggs in real-time from images or videos  
-- Classifies eggs into quality-based categories  
-- Provides performance metrics to evaluate model efficiency  
+Manual egg grading is **time-consuming**, **inconsistent**, and **subjective**.  
+This project aims to develop an **automated computer vision-based system** that:
+
+- 🥚 Detects eggs in real-time from images or video streams  
+- 🧩 Classifies eggs into quality-based categories (*Clean, Cracked, Dirty*)  
+- 📈 Evaluates model performance using standard metrics (Precision, Recall, mAP)
 
 ---
 
 ## 🚀 Key Features
 
-- 🧠 **YOLOv8-powered detection** for high-speed, real-time performance  
-- 🥚 Classifies eggs as *Clean*, *Cracked*, or *Dirty*  
-- ☁️ **Training on Google Colab** with Google Drive integration  
-- 📊 Includes **precision, recall, mAP, and loss curves** visualizations  
-- 🧩 Modular and scalable for integration into industrial grading systems  
-- 💾 Trained model exported for easy deployment and inference  
+- ⚡ **YOLOv8-powered detection** for fast and accurate results  
+- 🧠 Classifies eggs as *Clean*, *Cracked*, or *Dirty*  
+- ☁️ Trained on **Google Colab** with Google Drive integration  
+- 📊 Visualizes metrics such as **Precision**, **Recall**, **mAP**, and **Loss curves**  
+- 🧩 Modular design for easy integration into industrial workflows  
+- 💾 Trained model exported for deployment and inference  
 
 ---
 
@@ -36,87 +37,118 @@ The main goal of this research is to **develop an automated computer vision-base
 | Deep Learning | PyTorch |
 | Visualization | Matplotlib, Seaborn |
 | Storage | Google Drive |
-| Hardware | GPU runtime (Google Colab Pro) |
+| Hardware | GPU Runtime (Google Colab Pro) |
 
----
-
-Copy code
 ---
 
 ## ⚙️ Setup and Installation
 
-### 1. Open in Google Colab  
-You can easily run this project in **Google Colab** without any local setup.
+### 1️⃣ Open in Google Colab
+Run the notebook directly in **Google Colab** (recommended for quick setup and GPU support).
 
-### 2. Install Dependencies
+### 2️⃣ Install Dependencies
 ```bash
 !pip install ultralytics tqdm
-3. Verify Installation
-python
-Copy code
+```
+
+### 3️⃣ Verify Installation
+```python
 import ultralytics
 ultralytics.checks()
-4. Mount Google Drive
-python
-Copy code
+```
+
+### 4️⃣ Mount Google Drive
+```python
 from google.colab import drive
 drive.mount('/content/drive')
-🧠 Model Training
-Train the YOLOv8 model with your dataset using:
+```
 
-bash
-Copy code
+---
+
+## 🧠 Model Training
+
+Train the YOLOv8 model with your dataset:
+```bash
 !yolo task=detect mode=train model=yolov8n.pt data=/content/drive/MyDrive/EggGradingFYP/data.yaml epochs=10 batch=32 project=/content/drive/MyDrive/EggGradingFYP/result name=egg
-📈 Training Results
-Metric	Value
-Precision	0.919
-Recall	0.913
-mAP@0.5	0.974
-mAP@0.5:0.95	0.973
-Epochs	10
+```
 
-Training results, metrics, and plots can be found in:
+---
 
-swift
-Copy code
+## 📈 Training Results
+
+| Metric | Value |
+|--------|-------|
+| Precision | 0.919 |
+| Recall | 0.913 |
+| mAP@0.5 | 0.974 |
+| mAP@0.5:0.95 | 0.973 |
+| Epochs | 10 |
+
+📁 Training results, metrics, and plots are saved in:
+```
 /content/drive/MyDrive/EggGradingFYP/result/egg
-🔍 Model Inference (Prediction)
-Use the trained model to make predictions:
+```
 
-bash
-Copy code
+---
+
+## 🔍 Model Inference (Prediction)
+
+Run inference on test images:
+```bash
 !yolo task=detect mode=predict model=/content/drive/MyDrive/EggGradingFYP/result/egg/weights/best.pt source=/content/drive/MyDrive/EggGradingFYP/test/images
-The predictions are saved in the /runs/detect/predict/ folder.
+```
 
-📸 Sample Outputs
-Image	Classification
-🥚	Clean Egg
-🥚	Cracked Egg
-🥚	Dirty Egg
+📂 Predictions will be saved in:
+```
+/runs/detect/predict/
+```
 
-(You can include screenshots of your model predictions here.)
+---
 
-📊 Performance Summary
-The YOLOv8-based egg grading model demonstrated high accuracy and reliability, achieving:
+## 📸 Sample Outputs
 
-Excellent detection precision and recall
+| Image | Classification |
+|--------|----------------|
+| 🥚 | Clean Egg |
+| 🥚 | Cracked Egg |
+| 🥚 | Dirty Egg |
 
-Consistent classification across various lighting conditions
+*(You can add screenshots of your model’s predictions here.)*
 
-Smooth training convergence with minimal overfitting
+---
 
-This model can serve as a strong foundation for industrial egg sorting or quality assurance systems.
+## 📊 Performance Summary
 
-📦 Future Enhancements
-🧠 Extend dataset with more egg varieties
+The YOLOv8-based egg grading system achieved **high accuracy and robustness**, showing:
 
-📷 Real-time camera-based detection system
+- ✅ Excellent detection precision and recall  
+- 💡 Consistent performance under varied lighting conditions  
+- 📉 Smooth training convergence with minimal overfitting  
 
-📱 Develop a mobile/web app interface for live grading
+This model provides a **reliable foundation** for real-world industrial egg grading and quality assurance systems.
 
-⚙️ Deploy model on edge devices such as Raspberry Pi or Jetson Nano
+---
 
-👩‍💻 Author
-Priyanjan Perera
-Bachelor of Information and Communication Technology (Hons) – Software Technology
-University of Sri Jayewardenepura, Sri Lanka
+## 🔮 Future Enhancements
+
+- 🧠 Extend dataset with more egg varieties and lighting conditions  
+- 📷 Develop a **real-time camera-based detection** system  
+- 📱 Build a **mobile/web app interface** for live grading  
+- ⚙️ Deploy on **edge devices** (Raspberry Pi, Jetson Nano)  
+
+---
+
+## 👩‍💻 Author
+
+**Priyanjan Perera**  
+🎓 Bachelor of Information and Communication Technology (Hons) – Software Technology  
+🏛️ University of Sri Jayewardenepura, Sri Lanka  
+
+---
+
+## 🌐 Repository Name Suggestion
+**`AI-Egg-Grading-System-YOLOv8`**
+
+---
+
+⭐ *If you find this project helpful, don’t forget to star the repository!*
