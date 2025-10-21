@@ -40,37 +40,8 @@ The main goal of this research is to **develop an automated computer vision-base
 
 ---
 
-## 📁 Project Structure
-'''
-EggGradingFYP/
-│
-├── train/
-│   ├── images/
-│   └── labels/
-│
-├── valid/
-│   ├── images/
-│   └── labels/
-│
-├── test/
-│   ├── images/
-│   └── labels/
-│
-├── data.yaml
-├── yolov8n.pt
-│
-└── result/
-    └── egg/
-        ├── weights/
-        │   ├── best.pt
-        │   └── last.pt
-        │
-        ├── results.png
-        └── confusion_matrix.png
-'''
 yaml
 Copy code
-
 ---
 
 ## ⚙️ Setup and Installation
